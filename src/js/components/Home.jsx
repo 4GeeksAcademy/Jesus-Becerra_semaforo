@@ -1,26 +1,43 @@
-import React from "react";
-
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import React, {useState} from "react";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
+	const [activeLight, setActiveLight] = useState(null)
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+	return (
+		<div className="container d-flex justify-content-center">
+			<div className="row justify-content-center rounded-5 bg-dark col-3 mt-5">
+				<div className="row justify-content-center m-2">
+					{
+						activeLight === "green" ? <button className="light rounded-circle bg-success light-glow-green"
+						></button>
+						: <button className="light rounded-circle bg-success bg-opacity-75"
+						onClick={() => {
+							setActiveLight ("green")
+						}}></button>
+					}
+				</div>
+				<div className="row justify-content-center m-2">
+					{
+						activeLight === "yellow" ? <button className="light rounded-circle bg-warning light-glow-yellow"
+						></button>
+						: <button className="light rounded-circle bg-warning bg-opacity-75"
+						onClick={() => {
+							setActiveLight ("yellow")
+						}}></button>
+					}
+				</div>
+				<div className="row justify-content-center m-2">
+					{
+						activeLight === "red" ? <button className="light rounded-circle bg-danger light-glow-red"
+						></button>
+						: <button className="light rounded-circle bg-danger bg-opacity-75"
+						onClick={() => {
+							setActiveLight ("red")
+						}}></button>
+					}
+				</div>
+			</div>
 		</div>
 	);
 };

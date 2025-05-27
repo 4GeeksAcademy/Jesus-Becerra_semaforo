@@ -9,3 +9,19 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.light {
+    width: 160px;
+    height: 160px;
+}
+
+.light-glow-green {
+  box-shadow: 0 0 75px 10px rgba(0, 128, 0, 0.8); /* Ajusta los valores para el efecto deseado */
+}
+
+.light-glow-yellow {
+  box-shadow: 0 0 75px 10px rgba(255, 255, 0, 0.8);
+}
+
+.light-glow-red {
+  box-shadow: 0 0 75px 10px rgba(255, 0, 0, 0.8);
+}
